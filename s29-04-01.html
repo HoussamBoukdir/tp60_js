@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body>
+    <input type="button" onclick="action_click()" value="Click me!">
+    <input type="text" onblur="action_blur()" id="text1"> <br>
+    <span id="txt1"></span> <br>
+    <input type="text" id="text2" onkeyup="action_keyup()"> <br>
+    <span id="txt2"></span> <br>
+    <input type="checkbox" onchange="active()"  id="box">
+    <span id="affich"></span> <br>
+    <img src="./Tech Workspace Focus.jpeg"  id="img1" style="display: none;">
+    
+
+    
+    <script>
+        function action_click() {
+            alert("Button clicked!");
+        }
+
+        function action_blur() {
+            document.getElementById("txt1").innerHTML = text1.value;
+        }
+
+        function action_keyup(){
+            const valeur=document.getElementById("text2").value;
+            document.getElementById("txt2").innerHTML = valeur;
+        }
+        function active(){
+           /* var check=document.getElementById("box");
+            const spn=document.getElementById("affich")
+            if(check.checked){
+                spn.textContent="active"
+            }else{
+                spn.textContent="not active"
+            }*/
+           const valeur=document.getElementById("box").checked;
+           document.getElementById("affich").innerHTML = (valeur?"Selected":"Deselected");
+           document.querySelector("img").style.display = (valeur?"block":"none");
+        }
+    </script>
+</body>
+</html>
